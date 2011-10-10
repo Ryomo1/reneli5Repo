@@ -1,0 +1,29 @@
+#surefire
+#Mon Oct 10 23:48:59 BST 2011
+testClassesDirectory=/Users/r.lingofe/git/reneli5Repo/accomodationmatcher/target/test-classes
+classPathUrl.4=/Maven_Repository/junit/junit/4.1/junit-4.1.jar
+classPathUrl.3=/Maven_Repository/org/mockito/mockito-all/1.8.2/mockito-all-1.8.2.jar
+classPathUrl.2=/Maven_Repository/com/google/code/gson/gson/1.7.1/gson-1.7.1.jar
+useManifestOnlyJar=true
+classPathUrl.1=/Users/r.lingofe/git/reneli5Repo/accomodationmatcher/target/classes
+reportsDirectory=/Users/r.lingofe/git/reneli5Repo/accomodationmatcher/target/surefire-reports
+classPathUrl.0=/Users/r.lingofe/git/reneli5Repo/accomodationmatcher/target/test-classes
+dirscanner.0=directoryScannerOptions
+providerConfiguration=org.apache.maven.surefire.junit4.JUnit4Provider
+testSuiteDefinitionTestSourceDirectory=/Users/r.lingofe/git/reneli5Repo/accomodationmatcher/src/test/java
+surefireClassPathUrl.1=/Maven_Repository/org/apache/maven/surefire/surefire-api/2.7.1/surefire-api-2.7.1.jar
+surefireClassPathUrl.0=/Maven_Repository/org/apache/maven/surefire/surefire-junit4/2.7.1/surefire-junit4-2.7.1.jar
+report.2=org.apache.maven.surefire.report.XMLReporter
+useSystemClassLoader=true
+report.1=org.apache.maven.surefire.report.BriefFileReporter
+report.0=org.apache.maven.surefire.report.ForkingConsoleReporter
+excludes0=**/*$*
+isTrimStackTrace=true
+dirscanner.0.params=/Users/r.lingofe/git/reneli5Repo/accomodationmatcher/target/test-classes|[**/Test*.java, **/*Test.java, **/*TestCase.java]|[**/*$*]
+enableAssertions=true
+includes2=**/*TestCase.java
+failIfNoTests=false
+includes1=**/*Test.java
+dirscanner.0.types=java.io.File|java.util.ArrayList|java.util.ArrayList
+includes0=**/Test*.java
+childDelegation=false

@@ -1,14 +1,19 @@
 package com.accommodationmatches.service;
 
+import static org.mockito.Mockito.when;
 import static org.junit.Assert.*;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
+import com.accommodationmatches.dao.DomainObjectDao;
 import com.accommodationmatches.domain.Accommodation;
 import com.accommodationmatches.domain.Capacity;
 import com.accommodationmatches.domain.PriceRange;
@@ -20,14 +25,19 @@ public class AccommodationMatcherServiceTest {
 	private List<Accommodation> accommodationList;
 	private Traveller traveller;
 	private PriceRange priceRange;
+	@Mock
+	private DomainObjectDao domainObjectDao;
+	
 	@Before
-	public void setup() {
-		accommodationMatcherService = new AccommodationMatcherServiceImpl();
+	public void setup() throws FileNotFoundException {
+		MockitoAnnotations.initMocks(this);
 		setupAccommodations();
+		when(domainObjectDao.getAccommodationList()).thenReturn(accommodationList);
+		accommodationMatcherService = new AccommodationMatcherServiceImpl(domainObjectDao);		
 	}
 	
 	@Test
-	public void mustFindAccommodationOne(){
+	public void mustFindAccommodationOne() throws FileNotFoundException{
 		traveller = new Traveller();
 		traveller.setId(0);
 		traveller.setName("testName");
@@ -38,7 +48,7 @@ public class AccommodationMatcherServiceTest {
 		String[] requirements = {"bath", "phone"};
 		traveller.setRequirements(Arrays.asList(requirements));
 		
-		Accommodation accommodationOne = accommodationMatcherService.findAccommodationLocation(traveller, accommodationList);
+		Accommodation accommodationOne = accommodationMatcherService.findAccommodationLocation(traveller);
 		
 		assertEquals(120, accommodationOne.getPrice());
 		
@@ -49,6 +59,12 @@ public class AccommodationMatcherServiceTest {
 		accommodationMatcherService.adjustFreeCapacityForAccommodation(accommodationList.get(0));
 		assertEquals(0, accommodationList.get(0).getCapacity().getFree());
 		
+	}
+	
+	@Test
+	public void mustGetNextTravellerId() throws FileNotFoundException{
+		long id = accommodationMatcherService.getNextTravellerId();
+		assertEquals(Long.valueOf(1), id);
 	}
 
 	private void setupAccommodations() {

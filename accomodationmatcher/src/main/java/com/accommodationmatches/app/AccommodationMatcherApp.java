@@ -48,8 +48,8 @@ public class AccommodationMatcherApp {
 		
 		while(!data.equalsIgnoreCase("exit")){
 			System.out.println("*****************************************************");
-			System.out.println("1. Enter 1 to list travellers by accommodation it,");
-			System.out.println("2. Enter 2 to get accommodation by travel it,");
+			System.out.println("1. Enter 1 to list travellers by accommodation id,");
+			System.out.println("2. Enter 2 to get accommodation by travel id,");
 			System.out.println("3, Enter 3 to add new traveller");
 			System.out.println("*****************************************************");
 			System.out.print("\nacomcommand-->");

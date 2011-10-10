@@ -37,7 +37,7 @@ public class AccommodationMatcherApp {
 		
 		//prompt the user for imput and deal with user interaction
 		ScreenReaderService screenReader = new ScreenReaderServiceimpl();
-		System.out.print("Accommodation Matcher is ready. \n- Enter an option, then enter to continue\n- Enter exit, then press enter to stop\n");
+		System.out.print("Accommodation Matcher is ready. \n- Enter an option, then press enter to continue\n- Enter exit, then press enter to stop\n");
 		app.manageUserInteraction(screenReader, delegate);
 		System.out.println("Thank you and good bye.");
 	}
